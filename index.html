@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagani Scroll Animation</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Pagani</h1>
+        <button id="menu-toggle" class="menu-toggle">
+            <span></span>
+        </button>
+        
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="home">
+        <h1>Welcome to Pagani</h1>
+        <p>Scroll down to enter</p>
+    </section>
+
+    <section class="accueil">
+        <button class="btn" data-target="section-1">Projets</button>
+        <button class="btn" data-target="section-2">A propos</button>
+        <button class="btn" data-target="section-3">Skills</button>
+    </section>
+
+    <section class="content-section section-1">
+        <button class="back-btn">Retour</button>
+        <p>Contenu pour l’Option 1</p>
+    </section>
+
+    <section class="content-section section-2">
+        <button class="back-btn">Retour</button>
+        <p>Contenu pour l’Option 2</p>
+    </section>
+
+    <section class="content-section section-3">
+        <button class="back-btn">Retour</button>
+        <p>Contenu pour l’Option 3</p>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
