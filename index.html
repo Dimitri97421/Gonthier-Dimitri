@@ -3,47 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagani Scroll Animation</title>
+    <title>Gonthier Dimitri</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/accueil.css">
 </head>
 <body>
     <header>
-        <h1>Pagani</h1>
+        <h1><a class="logo" href="index.html">Dimitri</a></h1>
         <button id="menu-toggle" class="menu-toggle">
             <span></span>
         </button>
         
         <nav class="nav-menu" id="nav-menu">
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Option 1</a></li>
-                <li><a href="#">Option 2</a></li>
-                <li><a href="#">Option 3</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">GitHub</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="home">
-        <h1>Welcome to Pagani</h1>
-        <p>Scroll down to enter</p>
-    </section>
-
     <section class="accueil">
-        <button class="btn" data-target="section-1">Projets</button>
-        <button class="btn" data-target="section-2">A propos</button>
-        <button class="btn" data-target="section-3">Skills</button>
+        <h1>Bonjour, je suis Dimitri !</h1>
+        <h3 id="typed-text" class="typing"></h3>
+        <div class="chevrons">
+            <div class="chevron">▼</div>
+            <div class="chevron">▼</div>
+            <div class="chevron">▼</div>
+            <p>SCROLL DOWN</p>
+        </div>
     </section>
 
+    <section class="menu">
+        <div class="menu-content">
+            <button class="btn1" data-target="section-1">PROJETS</button>
+            <button class="btn2" data-target="section-2">À PROPOS</button>
+            <button class="btn3" data-target="section-3">SKILLS</button>
+        </div>
+        <div class="citation">
+            <h3>Tout ce que je sais, c'est que je ne sais rien...à part centrer une div.</h3>
+            <p>- Socrate, 2024</p>
+        </div>
+    </section>
+
+    <!--Page de projets-->
     <section class="content-section section-1">
         <button class="back-btn">Retour</button>
         <p>Contenu pour l’Option 1</p>
     </section>
 
+    <!--Page de présentation-->
     <section class="content-section section-2">
         <button class="back-btn">Retour</button>
         <p>Contenu pour l’Option 2</p>
     </section>
 
+    <!--Page de compétences-->
     <section class="content-section section-3">
         <button class="back-btn">Retour</button>
         <p>Contenu pour l’Option 3</p>

@@ -1,0 +1,64 @@
+/*Style pour la section accueil*/
+
+.accueil {
+    background-color: #333;
+    color: #fff;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.accueil .typing::after {
+    content: "|"; /* Barre de curseur */
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.7s steps(2) infinite;
+}
+
+/* Animation du curseur clignotant */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.chevrons {
+    display: flex;
+    position: absolute;
+    bottom: 20px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Espacement au-dessus des chevrons */
+}
+
+.chevron {
+    font-size: 30px; /* Taille des chevrons */
+    opacity: 0; /* Initialement invisible */
+    animation: fadeIn 1.4s forwards infinite; /* Animation de fadeIn */
+    margin: 5px 0; /* Espacement entre les chevrons */
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Commence invisible */
+        transform: translateY(-20px); /* Déplacement vers le haut */
+    }
+    100% {
+        opacity: 1; /* Devenir visible */
+        transform: translateY(0); /* Retour à la position d'origine */
+    }
+}
+
+/* Animation pour chaque chevron avec un délai */
+.chevron:nth-child(1) {
+    animation-delay: 0s; /* Aucun délai pour le premier */
+}
+
+.chevron:nth-child(2) {
+    animation-delay: 0.3s; /* Délai pour le deuxième */
+}
+
+.chevron:nth-child(3) {
+    animation-delay: 0.6s; /* Délai pour le troisième */
+}
