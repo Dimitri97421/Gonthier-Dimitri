@@ -3,10 +3,28 @@
 .accueil {
     background-color: #333;
     color: #fff;
+    display: flex;
     flex-direction: column;
     gap: 50px;
     text-align: center;
     overflow: hidden;
+    font-size: 20px;
+}
+
+.accueil h1 {
+    position: relative;
+    opacity: 0;
+    top: -68px;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.accueil.visible h1 {
+    transform: translateY(68px);
+    opacity: 1;
+}
+
+.accueil h3{
+    padding: 20px;
 }
 
 .accueil .typing::after {
@@ -25,40 +43,47 @@
 .chevrons {
     display: flex;
     position: absolute;
-    bottom: 20px;
+    bottom: -155px;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px; /* Espacement au-dessus des chevrons */
+    margin-top: 20px;
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.chevrons.visible {
+    transform: translateY(-175px);
+    opacity: 1;
 }
 
 .chevron {
-    font-size: 30px; /* Taille des chevrons */
-    opacity: 0; /* Initialement invisible */
-    animation: fadeIn 1.4s forwards infinite; /* Animation de fadeIn */
-    margin: 5px 0; /* Espacement entre les chevrons */
+    font-size: 30px;
+    opacity: 0;
+    animation: fadeIn 1.4s forwards infinite;
+    margin: 5px 0;
     color: white;
 }
 
 @keyframes fadeIn {
     0% {
-        opacity: 0; /* Commence invisible */
-        transform: translateY(-20px); /* Déplacement vers le haut */
+        opacity: 0;
+        transform: translateY(-20px);
     }
     100% {
-        opacity: 1; /* Devenir visible */
-        transform: translateY(0); /* Retour à la position d'origine */
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 /* Animation pour chaque chevron avec un délai */
 .chevron:nth-child(1) {
-    animation-delay: 0s; /* Aucun délai pour le premier */
+    animation-delay: 0s;
 }
 
 .chevron:nth-child(2) {
-    animation-delay: 0.3s; /* Délai pour le deuxième */
+    animation-delay: 0.3s;
 }
 
 .chevron:nth-child(3) {
-    animation-delay: 0.6s; /* Délai pour le troisième */
+    animation-delay: 0.6s;
 }

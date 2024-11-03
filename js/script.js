@@ -2,9 +2,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Écrit au bout d'une seconde
     setTimeout(()=>{
         typeWriter();
-    },1000)
+    },1250)
     const header = document.querySelector('header');
-    header.classList.add('visible'); // Ajoute la classe pour faire apparaître le header
+    header.classList.add('visible');
+    const accueilSection = document.querySelector('.accueil');
+    accueilSection.classList.add('visible');
+    const chevrons = document.querySelector('.chevrons');
+    chevrons.classList.add('visible');
 });
 
 const menuToggle = document.querySelector('.menu-toggle');
@@ -117,39 +121,102 @@ window.addEventListener('wheel', (event) => {
     }
 });
 
-// Événements pour les boutons de section
-document.querySelectorAll('.menu button').forEach(button => {
+// Événements pour les boutons de retour
+document.querySelectorAll('.back-btn').forEach(button => {
     button.addEventListener('click', (event) => {
-        if (isAnimating) return;
 
-        const targetSection = event.target.getAttribute('data-target'); // Récuoère la section à afficher
         isAnimating = true;
-        document.querySelector('.menu').style.opacity = '0';
-        document.querySelector('.menu').style.transform = 'translateX(100%)';
-        document.querySelector(`.${targetSection}`).style.opacity = '1';
-        document.querySelector(`.${targetSection}`).style.transform = 'translateX(0)';
-        currentSection = targetSection;
+        document.querySelector(`.${currentSection}`).style.opacity = '0';
+        document.querySelector(`.${currentSection}`).style.transform = 'translateY(100%)';
+        document.querySelector('.menu').style.opacity = '1';
+        document.querySelector('.menu').style.transform = 'translateY(0)';
+        currentSection = "menu";
 
-        setTimeout(() => {
+         // Fin de l'animation
+         setTimeout(() => {
             isAnimating = false;
         }, 1000);
     });
 });
 
-// Événements pour les boutons de retour
-document.querySelectorAll('.back-btn').forEach(button => {
-    button.addEventListener('click', () => {
-        if (isAnimating) return;
+let section1Visited = false //Annnule les animations si la section a été visité
+let section2Visited = false
+let section3Visited = false
 
+// Événements pour les boutons de section
+document.querySelectorAll('.menu button').forEach(button => {
+    button.addEventListener('click', (event) => {
+
+        const targetSection = event.target.getAttribute('data-target'); // Récupère la section à afficher
         isAnimating = true;
-        document.querySelector(`.${currentSection}`).style.opacity = '0';
-        document.querySelector(`.${currentSection}`).style.transform = 'translateX(-100%)';
-        document.querySelector('.menu').style.opacity = '1';
-        document.querySelector('.menu').style.transform = 'translateX(0)';
-        currentSection = "menu";
+        document.querySelector('.menu').style.opacity = '0';
+        document.querySelector('.menu').style.transform = 'translateY(-100%)';
+        document.querySelector(`.${targetSection}`).style.opacity = '1';
+        document.querySelector(`.${targetSection}`).style.transform = 'translateY(0)';
+        currentSection = targetSection;
 
-        setTimeout(() => {
-            isAnimating = false;
-        }, 1000);
+        if(currentSection === 'section-1'){
+            setTimeout(() => {
+                const imgCarousel = document.querySelector('.firstImg');
+                imgCarousel.classList.add('visible');
+                const descriptionCarousel = document.querySelector('.firstSlide');
+                descriptionCarousel.classList.add('visible');
+            }, 750);
+            $(document).ready(function() {
+                // Initialiser le slider principal
+                $('.carousel').slick({
+                    infinite: false,
+                    speed: 500,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    asNavFor: '.date-slider', // Synchronisation avec le slider de dates
+                    arrows: true,
+                    variableWidth: true
+                });
+            
+                // Initialiser le slider de dates
+                $('.date-slider').slick({
+                    infinite: false,
+                    slidesToShow: 5, // Afficher 3 dates en même temps
+                    slidesToScroll: 1,
+                    asNavFor: '.carousel', // Synchronisation avec le slider principal
+                    centerMode: true, // Centrer l'élément sélectionné
+                    focusOnSelect: true, // Sélection directe sur clic
+                    arrows: false // Masquer les flèches de navigation pour les dates
+                });
+            });
+        }
+
+        if(currentSection === 'section-2'){
+            //
+        }
+
+
+        // Lance les animations de la section 3
+        if(currentSection === 'section-3' && !section3Visited){
+            section3Visited = true;
+            setTimeout(()=>{
+                const progressBars = document.querySelectorAll(".progress-bar");
+                const percentages = document.querySelectorAll(".percentage");
+
+                progressBars.forEach((bar, index) => {
+                    const percentage = parseInt(bar.getAttribute("data-percentage"));
+                    let currentPercentage = 0;
+
+                    // Anime la barre de progression
+                    bar.style.width = percentage + "%";
+
+                    // Animation du compteur
+                    const interval = setInterval(() => {
+                        if (currentPercentage >= percentage) {
+                            clearInterval(interval);
+                        } else {
+                            currentPercentage++;
+                            percentages[index].textContent = currentPercentage + "%";
+                        }
+                    }, 20); // Durée pour l'effet de compteur
+                });
+            }, 1500)
+        }
     });
 });

@@ -1,0 +1,90 @@
+/*Style du carousel*/
+
+.carousel {
+    display: flex;
+    width: 90%;
+    height: auto;
+    max-width: 800px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+}
+
+.slide {
+    display: flex !important;
+    flex-direction: row-reverse;
+    justify-content: start;
+    width: 1000px;
+    height: auto;
+    padding: 20px;
+}
+
+.slide img {
+    width: 40%;
+    height: auto;
+    border-radius: 8px;
+    display: flex !important;
+}
+
+.firstImg {
+    top: -400px;
+    position: relative;
+    transition: transform 1s ease;
+}
+
+.firstImg.visible {
+    transform: translateY(400px);
+}
+
+.slide-text {
+    width: fit-content;
+    max-width: 350px;
+}
+
+.firstSlide {
+    position: relative;
+    left: -400px;
+    transition: transform 1s ease;
+}
+
+.firstSlide.visible {
+    transform: translateX(400px);
+}
+
+.title {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.2em;
+    color: #666;
+    white-space: normal;
+}
+
+
+/*Style de la barre timeline*/
+.date-slider {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    margin-bottom: 200px;
+    white-space: nowrap;
+}
+
+.date-slide {
+    text-align: center;
+    padding: 10px 5px;
+    gap: 10px;
+    min-width: 50px;
+    box-sizing: border-box;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.date-slide:hover, .date-slide.slick-current {
+    background-color: gray;
+}

@@ -1,0 +1,52 @@
+.menu {
+    background-color: #222;
+    color: #fff;
+    transform: translateY(100%);
+}
+
+.menu button{
+    color: white;
+    background: transparent;
+    border: 0;
+    font-size: 20px;
+    font-weight: 500;
+    width: 160px;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.menu .btn1, .menu .btn2{
+    border-right: 1px solid gray;
+}
+
+.menu-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.menu .citation{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    padding: 20px;
+    gap: 10px;
+    font-style: italic;
+}
+
+/*RESPONSIVE*/
+
+@media (max-width : 1024px){
+    .menu-content{
+        flex-direction: column;
+    }
+
+    .menu button{
+        width: 60vw;
+    }
+
+    .menu .btn1, .menu .btn2{
+        border-right: none;
+        border-bottom: 1px solid gray;
+    }
+}

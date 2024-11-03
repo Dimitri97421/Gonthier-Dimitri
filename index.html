@@ -6,6 +6,12 @@
     <title>Gonthier Dimitri</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/accueil.css">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="stylesheet" href="./css/projets.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
 </head>
 <body>
     <header>
@@ -17,8 +23,8 @@
         <nav class="nav-menu" id="nav-menu">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">GitHub</a></li>
+                <li><a href="mailto:dimitri.dg9@gmail.com">Contact</a></li>
+                <li><a href="https://github.com/Dimitri97421" target="_blank">GitHub</a></li>
             </ul>
         </nav>
     </header>
@@ -49,21 +55,115 @@
     <!--Page de projets-->
     <section class="content-section section-1">
         <button class="back-btn">Retour</button>
-        <p>Contenu pour l’Option 1</p>
+        <div class="carousel">
+            <div class="slide">
+                <img src="image1.webp" alt="Image 1" class="firstImg">
+                <div class="slide-text firstSlide">
+                    <div class="title">Titre 1</div>
+                    <div class="description">Ceci est la description de l'image 1.</div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image2.webp" alt="Image 2">
+                <div class="slide-text">
+                    <div class="title">Titre 2</div>
+                    <div class="description">Ceci est la description de l'image 2.</div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image3.webp" alt="Image 3">
+                <div class="slide-text">
+                    <div class="title">Titre 3</div>
+                    <div class="description">Ceci est la description de l'image 3.</div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image1.webp" alt="Image 1">
+                <div class="slide-text">
+                    <div class="title">Titre 4</div>
+                    <div class="description">Ceci est la description de l'image 1.</div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image2.webp" alt="Image 2">
+                <div class="slide-text">
+                    <div class="title">Titre 5</div>
+                    <div class="description">Ceci est la description de l'image 2.</div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="image3.webp" alt="Image 3">
+                <div class="slide-text">
+                    <div class="title">Titre 6</div>
+                    <div class="description">Ceci est la description de l'image 3.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slider de navigation avec les dates -->
+        <div class="date-slider">
+            <div class="date-slide">012024</div>
+            <div class="date-slide">022024</div>
+            <div class="date-slide">032024</div>
+            <div class="date-slide">0120241</div>
+            <div class="date-slide">0220242</div>
+            <div class="date-slide">0320243</div>
+        </div>
     </section>
 
     <!--Page de présentation-->
     <section class="content-section section-2">
         <button class="back-btn">Retour</button>
-        <p>Contenu pour l’Option 2</p>
+        <div id="wavy-text"></div>
     </section>
 
     <!--Page de compétences-->
     <section class="content-section section-3">
         <button class="back-btn">Retour</button>
-        <p>Contenu pour l’Option 3</p>
-    </section>
+        <h2>FRONT END</h2>
+        <div class="skill">
+            <h3>HTML / CSS</h3>
+            <div class="progress-container">
+                <div class="progress-bar" data-percentage="90"></div>
+                <span class="percentage">0%</span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>JAVASCRIPT</h3>
+            <div class="progress-container">
+                <div class="progress-bar" data-percentage="80"></div>
+                <span class="percentage">0%</span>
+            </div>
+        </div>
+        <div class="skill">
+            <h3>REACT & REDUX</h3>
+            <div class="progress-container">
+                <div class="progress-bar" data-percentage="70"></div>
+                <span class="percentage">0%</span>
+            </div>
+        </div>
+    
+        <h2>BACK END</h2>
+        <div class="skill">
+            <h3>NODE / EXPRESS</h3>
+            <div class="progress-container">
+                <div class="progress-bar" data-percentage="50"></div>
+                <span class="percentage">0%</span>
+            </div>
+        </div>
+    
+        <h2>DIVERS</h2>
+        <div class="skill">
+            <h3>GIT / JEST / DOCKER</h3>
+            <div class="progress-container">
+                <div class="progress-bar" data-percentage="80"></div>
+                <span class="percentage">0%</span>
+            </div>
+        </div>
+    </section>    
 
-    <script src="./js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
