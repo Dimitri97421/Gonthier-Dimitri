@@ -166,7 +166,6 @@ section {
     justify-content: center;
     transition: opacity 1s ease, transform 1.75s ease;
     background: #111;
-    overflow-y: auto;
     background-image: url('../images/brilliant.png');
 }
 
@@ -190,6 +189,9 @@ section {
 /*Responsive*/
 
 @media (max-width : 767.98px){
+    section{
+        overflow-y: auto;
+    }
     .nav-menu{
         width: 100%;
     }
