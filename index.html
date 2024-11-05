@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/menu.css">
     <link rel="stylesheet" href="./css/skills.css">
     <link rel="stylesheet" href="./css/projets.css">
+    <link rel="stylesheet" href="./css/apropos.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
@@ -29,138 +30,147 @@
         </nav>
     </header>
 
-    <section class="accueil">
-        <h1>Bonjour, je suis Dimitri !</h1>
-        <h3 id="typed-text" class="typing"></h3>
-        <div class="chevrons">
-            <div class="chevron">▼</div>
-            <div class="chevron">▼</div>
-            <div class="chevron">▼</div>
-            <p>SCROLL DOWN</p>
-        </div>
-    </section>
-
-    <section class="menu">
-        <div class="menu-content">
-            <button class="btn1" data-target="section-1">PROJETS</button>
-            <button class="btn2" data-target="section-2">À PROPOS</button>
-            <button class="btn3" data-target="section-3">SKILLS</button>
-        </div>
-        <div class="citation">
-            <h3>Tout ce que je sais, c'est que je ne sais rien...à part centrer une div.</h3>
-            <p>- Socrate, 2024</p>
-        </div>
-    </section>
-
-    <!--Page de projets-->
-    <section class="content-section section-1">
-        <button class="back-btn">Retour</button>
-        <div class="carousel">
-            <div class="slide">
-                <img src="image1.webp" alt="Image 1" class="firstImg">
-                <div class="slide-text firstSlide">
-                    <div class="title">Titre 1</div>
-                    <div class="description">Ceci est la description de l'image 1.</div>
-                </div>
+    <main>
+        <section class="accueil">
+            <h1>Bonjour, je suis Dimitri !</h1>
+            <h3 id="typed-text" class="typing"></h3>
+            <div class="chevrons">
+                <div class="chevron">▼</div>
+                <div class="chevron">▼</div>
+                <div class="chevron">▼</div>
+                <p>SCROLL DOWN</p>
             </div>
-            <div class="slide">
-                <img src="image2.webp" alt="Image 2">
-                <div class="slide-text">
-                    <div class="title">Titre 2</div>
-                    <div class="description">Ceci est la description de l'image 2.</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="image3.webp" alt="Image 3">
-                <div class="slide-text">
-                    <div class="title">Titre 3</div>
-                    <div class="description">Ceci est la description de l'image 3.</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="image1.webp" alt="Image 1">
-                <div class="slide-text">
-                    <div class="title">Titre 4</div>
-                    <div class="description">Ceci est la description de l'image 1.</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="image2.webp" alt="Image 2">
-                <div class="slide-text">
-                    <div class="title">Titre 5</div>
-                    <div class="description">Ceci est la description de l'image 2.</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="image3.webp" alt="Image 3">
-                <div class="slide-text">
-                    <div class="title">Titre 6</div>
-                    <div class="description">Ceci est la description de l'image 3.</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slider de navigation avec les dates -->
-        <div class="date-slider">
-            <div class="date-slide">012024</div>
-            <div class="date-slide">022024</div>
-            <div class="date-slide">032024</div>
-            <div class="date-slide">0120241</div>
-            <div class="date-slide">0220242</div>
-            <div class="date-slide">0320243</div>
-        </div>
-    </section>
-
-    <!--Page de présentation-->
-    <section class="content-section section-2">
-        <button class="back-btn">Retour</button>
-        <div id="wavy-text"></div>
-    </section>
-
-    <!--Page de compétences-->
-    <section class="content-section section-3">
-        <button class="back-btn">Retour</button>
-        <h2>FRONT END</h2>
-        <div class="skill">
-            <h3>HTML / CSS</h3>
-            <div class="progress-container">
-                <div class="progress-bar" data-percentage="90"></div>
-                <span class="percentage">0%</span>
-            </div>
-        </div>
-        <div class="skill">
-            <h3>JAVASCRIPT</h3>
-            <div class="progress-container">
-                <div class="progress-bar" data-percentage="80"></div>
-                <span class="percentage">0%</span>
-            </div>
-        </div>
-        <div class="skill">
-            <h3>REACT & REDUX</h3>
-            <div class="progress-container">
-                <div class="progress-bar" data-percentage="70"></div>
-                <span class="percentage">0%</span>
-            </div>
-        </div>
+        </section>
     
-        <h2>BACK END</h2>
-        <div class="skill">
-            <h3>NODE / EXPRESS</h3>
-            <div class="progress-container">
-                <div class="progress-bar" data-percentage="50"></div>
-                <span class="percentage">0%</span>
+        <section class="menu">
+            <div class="menu-content">
+                <button class="btn1" data-target="section-1">PROJETS</button>
+                <button class="btn2" data-target="section-2">À PROPOS</button>
+                <button class="btn3" data-target="section-3">SKILLS</button>
             </div>
-        </div>
+            <div class="citation">
+                <h3>Tout ce que je sais, c'est que je ne sais rien...à part centrer une div.</h3>
+                <p>- Socrate, 2024</p>
+            </div>
+        </section>
     
-        <h2>DIVERS</h2>
-        <div class="skill">
-            <h3>GIT / JEST / DOCKER</h3>
-            <div class="progress-container">
-                <div class="progress-bar" data-percentage="80"></div>
-                <span class="percentage">0%</span>
+        <!--Page de projets-->
+        <section class="content-section section-1">
+            <div class="carousel">
+                <div class="slide">
+                    <img src="./images/WeatherApp.webp" alt="Image 1" class="firstImg">
+                    <div class="slide-text firstSlide">
+                        <div class="title">Application météo</div>
+                        <div class="description">Application web en TypeScript fournissant des prévisions météo précises et en direct pour les utilisateurs du monde entier. Cliquez <a href="https://dimitri97421.github.io/weather-app/" target="_blank">ici</a> pour accéder au site.
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./images/AncienPortfolio.webp" alt="Image 2">
+                    <div class="slide-text">
+                        <div class="title">Mon 1er portfolio</div>
+                        <div class="description">Mon 1er portfolio en React, avec un backend en Node gérant un chatbot connecté à une API d'intelligence artificielle, des animations et plus encore. Cliquez <a href="https://dimitri-gonthier.onrender.com" target="_blank">ici</a> pour accéder au site.</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./images/ArgentBank.webp" alt="Image 3">
+                    <div class="slide-text">
+                        <div class="title">Application bancaire</div>
+                        <div class="description">Mise en oeuvre du front end d'une application bancaire en React via des appels API et avec Redux pour la gestion des données. Cliquez <a href="https://github.com/Dimitri97421/Projet_11_OC" target="_blank">ici</a> pour aller sur le GitHub.</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./images/Kasa.webp" alt="Image 1">
+                    <div class="slide-text">
+                        <div class="title">Site de location</div>
+                        <div class="description">Implémentation du front end d'une application React moderne et réactive. Cliquez <a href="https://dimitri97421.github.io/Projet_8_OC/" target="_blank">ici</a> pour accéder au site.</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./images/Projet6.webp" alt="Image 2">
+                    <div class="slide-text">
+                        <div class="title">Page web dynamique</div>
+                        <div class="description">Création d'un site web dynamique en communiquant avec une API. Cliquez <a href="https://github.com/Dimitri97421/Projet_6_OC" target="_blank">ici</a> pour aller sur le GitHub.</div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="./images/Projet4.webp" alt="Image 3">
+                    <div class="slide-text">
+                        <div class="title">Site mobile animé</div>
+                        <div class="description">Intégration d'une maquette en mobile-first afin d'améliorer l'interface d'un site avec des animations CSS/SCSS. Cliquez <a href="https://dimitri97421.github.io/Projet_4_OC/" target="_blank">ici</a> pour accéder au site.</div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>    
+    
+            <!-- Slider de navigation avec les dates -->
+            <div class="date-slider">
+                <div class="date-slide">10/24</div>
+                <div class="date-slide">08/24</div>
+                <div class="date-slide">05/24</div>
+                <div class="date-slide">03/24</div>
+                <div class="date-slide">01/24</div>
+                <div class="date-slide">12/23</div>
+            </div>
+
+            <button class="back-btn">Retour</button>
+        </section>
+    
+        <!--Page de présentation-->
+        <section class="content-section section-2">
+            <div class="intro v-center">
+                <p class="typer">Après ma licence en informatique, j’ai suivi une formation de 9 mois chez OpenClassrooms, axée sur le développement web front-end. J’y ai acquis des compétences solides en HTML, CSS, JavaScript et React, ainsi que des bonnes pratiques et divers outils, le tout à travers des projets concrets. En parallèle, j’ai exploré le back-end avec Node.js et MongoDB, ce qui m’a offert une vision globale des projets. Je suis désormais prêt à mettre en œuvre mes compétences afin d'acquérir de l'expérience et m’épanouir dans ce domaine.
+                </p>
+            </div>
+            <button class="back-btn">Retour</button>
+        </section>
+    
+        <!--Page de compétences-->
+        <section class="content-section section-3">
+            <div class="skills-content">
+                <h2>FRONT END</h2>
+                <div class="skill">
+                    <h3>HTML / CSS</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percentage="90"></div>
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>JAVASCRIPT</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percentage="80"></div>
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+                <div class="skill">
+                    <h3>REACT & REDUX</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percentage="70"></div>
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+            
+                <h2>BACK END</h2>
+                <div class="skill">
+                    <h3>NODE / EXPRESS</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percentage="50"></div>
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+            
+                <h2>DIVERS</h2>
+                <div class="skill">
+                    <h3>GIT / JEST / DOCKER</h3>
+                    <div class="progress-container">
+                        <div class="progress-bar" data-percentage="80"></div>
+                        <span class="percentage">0%</span>
+                    </div>
+                </div>
+            </div>
+            <button class="back-btn">Retour</button>
+        </section>
+    </main>    
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>

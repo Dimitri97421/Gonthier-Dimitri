@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(()=>{
         typeWriter();
     },1250)
+    // Affiche progressivement le heaeder, le titre et les chevrons
     const header = document.querySelector('header');
     header.classList.add('visible');
     const accueilSection = document.querySelector('.accueil');
@@ -95,8 +96,8 @@ window.addEventListener('wheel', (event) => {
         // Scroll vers le bas, passer de accueil à menu
         isAnimating = true; // Début de l'animation
         document.querySelector('.accueil').style.opacity = '0'; // Rendre la section actuelle invisible
-        document.querySelector('.accueil').style.transform = 'translateY(-100%)'; // Déplacer la section actuelle vers le haut
-        document.querySelector('.menu').style.opacity = '1'; // Rendre la section d'menu visible
+        document.querySelector('.accueil').style.transform = 'translateY(-100%)'; // Déplace la section actuelle vers le haut
+        document.querySelector('.menu').style.opacity = '1'; // Rendre la section menu visible
         document.querySelector('.menu').style.transform = 'translateY(0)'; // Remettre menu dans la vue
         currentSection = "menu"; // Mise à jour de la section actuelle
 
@@ -121,24 +122,6 @@ window.addEventListener('wheel', (event) => {
     }
 });
 
-// Événements pour les boutons de retour
-document.querySelectorAll('.back-btn').forEach(button => {
-    button.addEventListener('click', (event) => {
-
-        isAnimating = true;
-        document.querySelector(`.${currentSection}`).style.opacity = '0';
-        document.querySelector(`.${currentSection}`).style.transform = 'translateY(100%)';
-        document.querySelector('.menu').style.opacity = '1';
-        document.querySelector('.menu').style.transform = 'translateY(0)';
-        currentSection = "menu";
-
-         // Fin de l'animation
-         setTimeout(() => {
-            isAnimating = false;
-        }, 1000);
-    });
-});
-
 let section1Visited = false //Annnule les animations si la section a été visité
 let section2Visited = false
 let section3Visited = false
@@ -155,41 +138,100 @@ document.querySelectorAll('.menu button').forEach(button => {
         document.querySelector(`.${targetSection}`).style.transform = 'translateY(0)';
         currentSection = targetSection;
 
-        if(currentSection === 'section-1'){
+        if(currentSection === 'section-1' && !section1Visited){
             setTimeout(() => {
                 const imgCarousel = document.querySelector('.firstImg');
                 imgCarousel.classList.add('visible');
                 const descriptionCarousel = document.querySelector('.firstSlide');
                 descriptionCarousel.classList.add('visible');
-            }, 750);
+            }, 650);
             $(document).ready(function() {
-                // Initialiser le slider principal
+                // Initialise le slider principal
                 $('.carousel').slick({
                     infinite: false,
                     speed: 500,
                     slidesToShow: 1,
                     slidesToScroll: 1,
                     asNavFor: '.date-slider', // Synchronisation avec le slider de dates
-                    arrows: true,
-                    variableWidth: true
+                    arrows: true
                 });
             
-                // Initialiser le slider de dates
+                // Initialise le slider de dates
                 $('.date-slider').slick({
                     infinite: false,
-                    slidesToShow: 5, // Afficher 3 dates en même temps
+                    slidesToShow: 5, // Affiche 5 dates en même temps
                     slidesToScroll: 1,
                     asNavFor: '.carousel', // Synchronisation avec le slider principal
-                    centerMode: true, // Centrer l'élément sélectionné
+                    centerMode: true, // Centre l'élément sélectionné
                     focusOnSelect: true, // Sélection directe sur clic
-                    arrows: false // Masquer les flèches de navigation pour les dates
+                    arrows: false, // Masque les flèches de navigation pour les dates
+                    responsive: [
+                        {
+                          breakpoint: 768,
+                          settings: {
+                            slidesToShow: 3
+                          }
+                        }
+                      ]
                 });
             });
         }
 
-        if(currentSection === 'section-2'){
-            //
+        var paragraph = document.querySelector('.typer');
+        var originalText = paragraph.innerHTML; // Enregistre le texte original une fois
+        var textVisible = false; // Variable pour suivre l'état d'affichage du texte
+
+        if (currentSection === 'section-2' && !section2Visited) {
+            section2Visited = true;
+            
+            // Ne vide le texte que si c'est la première fois qu'on l'affiche
+            if (!textVisible) {
+                paragraph.innerHTML = ''; // Vide le contenu une seule fois
+                textVisible = true; // Marque que l'animation a été jouée
+            }
+
+            function textEffect(animationName) {
+                var words = originalText.split(' '); // Sépare le texte en mots
+                var newText = '';
+
+                // Crée une balise <i> autour de chaque mot
+                for (var i = 0; i < words.length; i++) {
+                    newText += '<i style="opacity: 0;">' + words[i] + '</i>'; // Initialisation avec opacité 0
+                    if (i < words.length - 1) {
+                        newText += ' '; // Ajoute un espace entre les mots
+                    }
+                }
+
+                // Injecte le texte modifié dans le paragraphe
+                paragraph.innerHTML = newText;
+
+                // Récupère tous les mots enveloppés dans des balises <i>
+                var wrappedWords = paragraph.getElementsByTagName('i');
+                var wrappedWordsLen = wrappedWords.length;
+                var j = 0;
+
+                // Fonction d'ajout d'animation à chaque mot
+                function addEffect() {
+                    setTimeout(function () {
+                        wrappedWords[j].className = animationName; // Applique la classe d'animation
+                        wrappedWords[j].style.opacity = 1; // Rend le mot visible progressivement
+                        j++;
+                        if (j < wrappedWordsLen) {
+                            addEffect(); // Continue jusqu'au dernier mot
+                        }
+                    }, 100); // Délai entre chaque mot
+                }
+
+                setTimeout(() => {
+                    addEffect(); // Débute l'animation
+                }, 500);
+            }
+
+            // Appele l'effet pour lancer l'animation
+            textEffect('fly-in-out');
         }
+
+
 
 
         // Lance les animations de la section 3
@@ -216,7 +258,25 @@ document.querySelectorAll('.menu button').forEach(button => {
                         }
                     }, 20); // Durée pour l'effet de compteur
                 });
-            }, 1500)
+            }, 1000)
         }
+    });
+});
+
+// Événements pour les boutons de retour
+document.querySelectorAll('.back-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+
+        isAnimating = true;
+        document.querySelector(`.${currentSection}`).style.opacity = '0';
+        document.querySelector(`.${currentSection}`).style.transform = 'translateY(100%)';
+        document.querySelector('.menu').style.opacity = '1';
+        document.querySelector('.menu').style.transform = 'translateY(0)';
+        currentSection = "menu";
+
+         // Fin de l'animation
+         setTimeout(() => {
+            isAnimating = false;
+        }, 1000);
     });
 });

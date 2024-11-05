@@ -1,14 +1,13 @@
 /*Style pour la section accueil*/
 
 .accueil {
-    background-color: #333;
     color: #fff;
     display: flex;
     flex-direction: column;
     gap: 50px;
     text-align: center;
     overflow: hidden;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .accueil h1 {
@@ -52,7 +51,7 @@
 }
 
 .chevrons.visible {
-    transform: translateY(-175px);
+    transform: translateY(-165px);
     opacity: 1;
 }
 

@@ -10,10 +10,15 @@ body {
     background: black;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 header {
     position: absolute;
     top: -90px;
-    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -23,6 +28,7 @@ header {
     z-index: 1000;
     opacity: 0;
     transition: transform 1s ease, opacity 1s ease;
+    background: #111;
 }
 
 header.visible {
@@ -33,12 +39,12 @@ header.visible {
 header .logo {
     text-decoration: none;
     display: inline-block;
-    padding: 2px;
+    padding: 1px;
     border: 1px solid white;
     border-radius: 50%;
     text-align: center;
     color: white;
-    width: 135px;
+    width: 165px;
     font-size: 24px;
 }
 
@@ -153,30 +159,32 @@ header .logo {
 /*Style pour chaque section*/
 section {
     position: absolute;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: opacity 1s ease, transform 1.75s ease;
+    background: #111;
+    overflow-y: auto;
+    background-image: url('../images/brilliant.png');
 }
 
 .content-section {
-    background-color: #444;
     color: #fff;
-    transform: translateY(100%);
     flex-direction: column;
     opacity: 0;
-}
+    transform: translateY(100%);
+    }
 
 .content-section .back-btn{
-    position: fixed;
-    bottom: 10px;
     cursor: pointer;
     width: 150px;
     border: 0;
     padding: 10px;
     font-size: 16px;
+    margin-bottom: 10px;
+    margin-top: auto;
 }
 
 /*Responsive*/
