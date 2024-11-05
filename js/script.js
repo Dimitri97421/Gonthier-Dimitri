@@ -84,43 +84,67 @@ function eraseText() {
     }
 }
 
-let currentSection = "accueil"; // Section actuelle
-let isAnimating = false; // État d'animation
+let startY = 0;
+let isAnimating = false;
+let currentSection = "accueil";
 
-// Événement de défilement pour passer de accueil à menu
+// Écouteurs pour l'événement wheel (pour les ordinateurs)
 window.addEventListener('wheel', (event) => {
-    // Ne rien faire si une animation est en cours
     if (isAnimating) return;
 
     if (event.deltaY > 0 && currentSection === "accueil") {
-        // Scroll vers le bas, passer de accueil à menu
-        isAnimating = true; // Début de l'animation
-        document.querySelector('.accueil').style.opacity = '0'; // Rendre la section actuelle invisible
-        document.querySelector('.accueil').style.transform = 'translateY(-100%)'; // Déplace la section actuelle vers le haut
-        document.querySelector('.menu').style.opacity = '1'; // Rendre la section menu visible
-        document.querySelector('.menu').style.transform = 'translateY(0)'; // Remettre menu dans la vue
-        currentSection = "menu"; // Mise à jour de la section actuelle
-
-        // Fin de l'animation
-        setTimeout(() => {
-            isAnimating = false; // Réactive le défilement
-        }, 1000); // Durée totale de l'animation
+        scrollToMenu();
     } else if (event.deltaY < 0 && currentSection === "menu") {
-        // Scroll vers le haut, retour à accueil
-        isAnimating = true;
-        document.querySelector('.menu').style.opacity = '0';
-        document.querySelector('.menu').style.transform = 'translateY(100%)';
-
-        document.querySelector('.accueil').style.opacity = '1';
-        document.querySelector('.accueil').style.transform = 'translateY(0)';
-        currentSection = "accueil";
-
-        // Fin de l'animation
-        setTimeout(() => {
-            isAnimating = false;
-        }, 1000);
+        scrollToAccueil();
     }
 });
+
+// Gestion du balayage tactile pour mobile
+window.addEventListener('touchstart', (event) => {
+    startY = event.touches[0].clientY; // Position initiale du doigt
+});
+
+window.addEventListener('touchmove', (event) => {
+    if (isAnimating) return;
+
+    const currentY = event.touches[0].clientY; // Position actuelle du doigt
+    const deltaY = startY - currentY; // Différence de déplacement
+
+    if (deltaY > 50 && currentSection === "accueil") {
+        // Balayage vers le haut, aller à la section menu
+        scrollToMenu();
+    } else if (deltaY < -50 && currentSection === "menu") {
+        // Balayage vers le bas, retour à la section accueil
+        scrollToAccueil();
+    }
+});
+
+function scrollToMenu() {
+    isAnimating = true;
+    document.querySelector('.accueil').style.opacity = '0';
+    document.querySelector('.accueil').style.transform = 'translateY(-100%)';
+    document.querySelector('.menu').style.opacity = '1';
+    document.querySelector('.menu').style.transform = 'translateY(0)';
+    currentSection = "menu";
+    
+    setTimeout(() => {
+        isAnimating = false;
+    }, 1000);
+}
+
+function scrollToAccueil() {
+    isAnimating = true;
+    document.querySelector('.menu').style.opacity = '0';
+    document.querySelector('.menu').style.transform = 'translateY(100%)';
+    document.querySelector('.accueil').style.opacity = '1';
+    document.querySelector('.accueil').style.transform = 'translateY(0)';
+    currentSection = "accueil";
+    
+    setTimeout(() => {
+        isAnimating = false;
+    }, 1000);
+}
+
 
 let section1Visited = false //Annnule les animations si la section a été visité
 let section2Visited = false
