@@ -197,5 +197,11 @@ section {
     }
 }
 
+@media(max-width : 1024px){
+    .content-section .back-btn{
+        margin-bottom: 60px;
+    }
+}
+
 
 

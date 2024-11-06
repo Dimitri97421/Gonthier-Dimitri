@@ -48,4 +48,8 @@
         border-right: none;
         border-bottom: 1px solid gray;
     }
+
+    .citation{
+        margin-bottom: 40px;
+    }
 }
