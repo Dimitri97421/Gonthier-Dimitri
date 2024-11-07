@@ -42,8 +42,10 @@ p.typer {
 
   @media (max-width : 600px){
 		.intro{
-			padding-top: 170px;
+			padding-top: 180px;
 			padding-bottom: 40px;
 			overflow-y: scroll;
+			width: 87%;
+			max-height: 150%;
 		}
   }
