@@ -89,6 +89,12 @@
 
 @media(max-width : 1024px){
     .chevrons{
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 500px){
+    .chevrons p{
+        display: none;
     }
 }
